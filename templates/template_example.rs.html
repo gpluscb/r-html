@@ -1,0 +1,37 @@
+<!--args title: &str, data: &[CoolStruct] -->
+
+<!--rs use crate::CoolStruct; -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>[rs title]</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>[rs title]</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Some name</th>
+            <th>A datapoint</th>
+            <th>Another number</th>
+            <th>More numbers</th>
+        </tr>
+        </thead>
+        <!--rs for data_row in data { -->
+        <tr>
+            <td>[rs data_row.name]<!--rs if let Some(alt_name) = &data_row.alternative_name {
+                --> (aka [rs alt_name])<!--rs
+            } --></td>
+            <td>[rs data_row.datapoint.to_string()]</td>
+            <td>[rs data_row.second_datapoint.to_string()]</td>
+            <td>[rs data_row.another_number.to_string()]</td>
+        </tr>
+        <!--rs } -->
+    </table>
+</div>
+</body>
+</html>
