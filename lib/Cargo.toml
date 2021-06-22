@@ -6,5 +6,5 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-r-html-codegen = { path = "../r-html-codegen", version = "0.2.0" }
+r-html-codegen = { path = "../codegen", version = "0.2.0" }
 html-escape = "0.2.9"
