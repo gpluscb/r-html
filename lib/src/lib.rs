@@ -1,3 +1,5 @@
+pub use r_html_codegen::template;
+
 #[cfg(test)]
 mod tests {
     #[test]
