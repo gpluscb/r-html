@@ -44,7 +44,7 @@ Shitty template engine for rust that is kinda cool actually (in concept, maybe).
 </html>
 ```
 
-`<!-- args ... -->` defines the arguments your macro will take.
+`<!--args ... -->` defines the arguments your macro will take.
 Stuff inside of `<!--rs ... -->` will literally appear in the generated rust code.
 This is the "kinda cool" part: because that's an HTML comment you can still look at the template as an html file in your browser and it will look ok.
 A rust expressions inside of `[rs ...]` will be evaluated and then inserted in the HTML.
