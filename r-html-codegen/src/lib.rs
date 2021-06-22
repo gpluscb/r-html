@@ -128,7 +128,7 @@ mod tests {
     pub fn test() {
         println!(
             "{:?}",
-            parse_template(include_str!("../templates/template_example.rs.html"))
+            parse_template(include_str!("../../templates/template_example.rs.html"))
         );
     }
 }
