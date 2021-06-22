@@ -3,12 +3,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../r-html">
+      <sourceFolder url="file://$MODULE_DIR$/../r-html/codegen/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../r-html/codegen/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../r-html/lib/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../r-html/r-html-codegen/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../r-html/r-html-codegen/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../r-html/target" />
-      <excludeFolder url="file://$MODULE_DIR$/../r-html/r-html-codegen/target" />
       <excludeFolder url="file://$MODULE_DIR$/../r-html/lib/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../r-html/codegen/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
