@@ -7,3 +7,4 @@ edition = "2018"
 
 [dependencies]
 r-html-codegen = { path = "../r-html-codegen", version = "0.2.0" }
+html-escape = "0.2.9"
