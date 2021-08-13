@@ -52,7 +52,7 @@ fn code_from_part(part: ParsePart) -> String {
     match part {
         ParsePart::Args(_) => panic!("Args variant, shouldn't happen really"),
         ParsePart::Html(html) => format!("out.push_str(r####\"{}\"####);\n", html),
-        ParsePart::RsValue(value) => format!("out.push_str(::std::ops::Deref::deref(&::r_html::html_escape::encode_safe(::r_html::ToHtml::to_html({}))));\n", value),
+        ParsePart::RsValue(value) => format!("out.push_str(&::r_html::ToHtml::to_html(&::r_html::Html({})));\n", value),
         ParsePart::RsControl(mut control) => {
             control.push('\n');
             control

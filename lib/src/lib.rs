@@ -1,46 +1,22 @@
 pub use html_escape;
 pub use r_html_codegen::template;
 
-pub trait ToHtml<'a> {
-    type Out: AsRef<str> + 'a;
-    fn to_html(&'a self) -> Self::Out;
+pub trait ToHtml {
+    fn to_html(&self) -> String;
 }
 
-impl<'a> ToHtml<'a> for String {
-    type Out = &'a str;
+pub struct Html<T: AsRef<str>>(pub T);
 
-    fn to_html(&'a self) -> Self::Out {
-        self
+impl<T: AsRef<str>> ToHtml for Html<T> {
+    fn to_html(&self) -> String {
+        html_escape::encode_safe(&self.0).into_owned()
     }
 }
 
-impl<'a> ToHtml<'a> for &str {
-    type Out = &'a str;
+pub struct RawHtml<T: ToString>(pub T);
 
-    fn to_html(&'a self) -> &'a str {
-        self
+impl<T: ToString> ToHtml for RawHtml<T> {
+    fn to_html(&self) -> String {
+        self.0.to_string()
     }
 }
-
-macro_rules! to_html_from_to_strings {
-    ($($t: ty),+) => {
-        $(
-            to_html_from_to_string!($t);
-        )*
-    }
-}
-
-macro_rules! to_html_from_to_string {
-    ($t: ty) => {
-        impl<'a> ToHtml<'a> for $t {
-            type Out = String;
-
-            fn to_html(&'a self) -> Self::Out {
-                self.to_string()
-            }
-        }
-    };
-}
-
-to_html_from_to_strings!(u8, u16, u32, u64, u128, usize);
-to_html_from_to_strings!(i8, i16, i32, i64, i128, isize);
