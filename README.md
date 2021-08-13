@@ -57,7 +57,7 @@ let html: String = template!("/path/to/my_cool_template.rs.html", "title", &data
 ```
 `Cargo.toml`:
 ```
-r-html = { git = "https://github.com/gpluscb/r-html.git", tag = "0.2.0" }
+r-html = { git = "https://github.com/gpluscb/r-html.git", tag = "0.1.0" }
 ```
 
 
